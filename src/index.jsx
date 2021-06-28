@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #000000;
+    background-color: #030303;
     background-attachment: fixed;
     font-family: 'Noto Sans KR', sans-serif;
     color: #ffffff;
