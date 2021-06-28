@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useHistory } from "react-router-dom";
 import { TextField, Button, Space } from "components";
 
@@ -20,23 +20,50 @@ const Divider = styled.div`
   }
 `;
 
+const leftFade = keyframes`
+  0% {
+    opacity: 0;
+    margin-bottom: -90px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-bottom: -60px;
+  }
+`;
+
+const rightFade = keyframes`
+  0% {
+    opacity: 0;
+    margin-bottom: 180px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-bottom: 150px;
+  }
+`;
+
 const VerticalText = styled.div`
   writing-mode: vertical-rl;
   text-orientation: upright;
   font-family: "Nanum Myeongjo", serif;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 `;
 
 const Title = styled.div`
   letter-spacing: 5px;
   margin-left: 10px;
-  margin-top: -150px;
   font-size: 30pt;
+  opacity: 0;
+  animation: ${rightFade} 3s forwards;
+  animation-delay: 0.5s;
 `;
 
 const Subtitle = styled.div`
   letter-spacing: 5px;
-  margin-bottom: -60px;
   font-size: 15pt;
+  animation: ${leftFade} 3s forwards;
 `;
 
 const SignPage = () => {
