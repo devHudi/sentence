@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Navigation, WidthLimiter } from "components";
+import { Navigation, WidthLimiter, Card } from "components";
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 const ProfileWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 40px;
 `;
 
 const ProfileImage = styled.img`
@@ -26,12 +27,20 @@ const Name = styled.div`
 
 const Description = styled.div`
   margin-bottom: 15px;
-  font-size: 15pt;
+  font-size: 14pt;
+  font-weight: normal;
   color: rgba(255, 255, 255, 0.9);
 `;
 
 const Numbers = styled.div`
-  font-size: 13pt;
+  font-size: 12pt;
+  font-weight: lighter;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 20px;
 `;
 
 const Profile = () => {
@@ -40,7 +49,7 @@ const Profile = () => {
       <ProfileImage src="https://hudi.blog/static/profile-49f9435bde9ff6068fc6a872d6412538.png" />
       <div>
         <Name>조동현</Name>
-        <Description>책 조아</Description>
+        <Description> 책을 좋아하는 서비스 개발자입니다. </Description>
         <Numbers> 좋아한 문장 35 | 작성한 문장 32 </Numbers>
       </div>
     </ProfileWrapper>
@@ -53,6 +62,15 @@ const MyPage = () => {
       <Navigation />
       <WidthLimiter small>
         <Profile />
+        <Grid>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </Grid>
       </WidthLimiter>
     </Wrapper>
   );
