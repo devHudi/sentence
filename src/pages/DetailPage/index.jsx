@@ -20,6 +20,7 @@ const BackArrowWrapper = styled.div`
   left: 15px;
   font-size: 15pt;
   cursor: pointer;
+  z-index: 999;
 `;
 
 const Dimmer = styled.div`
