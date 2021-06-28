@@ -3,7 +3,8 @@ import { useHistory } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiArrowLeft } from "react-icons/fi";
-import { TextField, Comment, Space } from "components";
+import { AiOutlineShareAlt } from "react-icons/ai";
+import { TextField, Comment, Space, Button } from "components";
 
 const Fullpage = styled.div`
   position: relative;
@@ -138,6 +139,54 @@ const CommentWidth = styled.div`
   margin: 0 auto;
 `;
 
+const FundingWrapper = styled.div`
+  width: 500px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  text-align: left;
+  & ${Button} {
+    margin-bottom: 10px;
+  }
+`;
+
+const FundingRemain = styled.div`
+  font-size: 15pt;
+`;
+
+const FundingProgressWrapper = styled.div`
+  margin: 10px 0;
+  position: relative;
+  width: 100%;
+  height: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+`;
+
+const FundingProgressBar = styled.div`
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+`;
+
+const FundingPercentage = styled.div`
+  margin-bottom: 20px;
+`;
+
+const Funding = () => {
+  return (
+    <FundingWrapper>
+      <FundingRemain>펀딩 50일 남음</FundingRemain>
+      <FundingProgressWrapper>
+        <FundingProgressBar />
+      </FundingProgressWrapper>
+      <FundingPercentage>
+        342,520원 펀딩 / 50% 달성 / 242 명의 출간 희망자
+      </FundingPercentage>
+      <Button> 펀딩하기 </Button>
+      <Button> 공유하기 </Button>
+    </FundingWrapper>
+  );
+};
+
 const DetailPage = ({ isFunding }) => {
   const history = useHistory();
   const [opacity, setOpacity] = useState(0);
@@ -171,11 +220,15 @@ const DetailPage = ({ isFunding }) => {
       </Fullpage>
       <div>
         <DetailSection>
-          <Title>책 제목 (Book Title)</Title>
+          <Title>나는 그래도 오늘을 살아간다</Title>
           <Subtitle>
-            책 부제목 | 이성인 작가 | 세인트 출판사 | 1998. 12. 28
+            힘겨운 오늘, 그래도 아름다운 | 이성인 작가 | 세인트 출판사 | 1998.
+            12. 28
           </Subtitle>
           <BookCover src="https://mblogthumb-phinf.pstatic.net/MjAyMDA3MTRfNzAg/MDAxNTk0Njk2ODE2MTIy.pv4Ij7GFJwXLBKhwL2Jjcj59WdDc5hfdmzdVjUycDHkg.x51bDgp1jKX3SuQsWoHdWIu9OcaBOrpy5gtWmr9niWAg.PNG.zencstory/SE-b3c3d58a-e05d-4285-a9bb-8a9c67e07643.png?type=w800" />
+
+          {isFunding && <Funding />}
+
           <BookDescription>
             가지에 황금시대를 기관과 사막이다. 가장 만물은 그들은 천하를
             철환하였는가? 따뜻한 얼마나 트고, 밥을 너의 이것이다. 피가
@@ -183,13 +236,14 @@ const DetailPage = ({ isFunding }) => {
             길지 구하지 트고, 있는 끓는 아름다우냐? 것은 있음으로써 할지라도
             교향악이다. 위하여, 쓸쓸한 트고, 칼이다.
           </BookDescription>
+
           <CommentWidth>
             <TextField placeholder="댓글을 입력하세요" />
             <Space size={20} />
             <Comment> 책 정말 추천드립니다. </Comment>
             <Comment> 심금을 울리는 책 입니다. </Comment>
             <Comment> 울었다. </Comment>
-            <Comment> ㅠㅠ </Comment>
+            <Comment> 이성인 작가, 그는 신인가? </Comment>
           </CommentWidth>
         </DetailSection>
       </div>
