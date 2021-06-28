@@ -82,8 +82,8 @@ const SignPage = () => {
         </div>
         <div>
           <div>
-            <TextField />
-            <TextField />
+            <TextField placeholder="이메일" />
+            <TextField placeholder="패스워드" type="password" />
             <Space size={15} />
             <Button onClick={() => history.push("/emotion")}> 로그인 </Button>
           </div>

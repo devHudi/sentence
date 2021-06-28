@@ -8,8 +8,13 @@ const TextField = styled.input`
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
   outline: none;
   background-color: transparent;
+  color: #ffffff;
+  font-size: 14pt;
+  font-weight: lighter;
 
-  font-size: 12pt;
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
 `;
 
 export default TextField;
