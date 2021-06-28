@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { IoIosArrowDown } from "react-icons/io";
+import { FiArrowLeft } from "react-icons/fi";
 import { TextField, Comment, Space } from "components";
 
 const Fullpage = styled.div`
@@ -10,6 +12,14 @@ const Fullpage = styled.div`
   background-image: url("https://images.unsplash.com/photo-1488564411612-8984d0ac502f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1556&q=80");
   background-size: cover;
   background-position: center;
+`;
+
+const BackArrowWrapper = styled.div`
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 15pt;
+  cursor: pointer;
 `;
 
 const Dimmer = styled.div`
@@ -128,6 +138,7 @@ const CommentWidth = styled.div`
 `;
 
 const DetailPage = ({ isFunding }) => {
+  const history = useHistory();
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
@@ -152,6 +163,9 @@ const DetailPage = ({ isFunding }) => {
         <ArrowWrapper>
           <IoIosArrowDown />
         </ArrowWrapper>
+        <BackArrowWrapper onClick={() => history.push("/main")}>
+          <FiArrowLeft />
+        </BackArrowWrapper>
         <ScrollDimmer opacity={opacity}></ScrollDimmer>
       </Fullpage>
       <div>
