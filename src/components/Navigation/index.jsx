@@ -17,7 +17,6 @@ const MenuWrapper = styled.div`
   display: inline-block;
   margin: 0 auto;
   display: flex;
-
   font-size: 20px;
 `;
 
@@ -28,19 +27,17 @@ const Menu = styled.div`
   cursor: pointer;
   transition: color 0.3s;
 
-  &:hover {
-  }
-
   &:last-child {
     margin: 0;
   }
 `;
 
-const LogoImage = styled.img`
+const Logo = styled.div`
   position: absolute;
   top: 18px;
   left: 20px;
   height: 24px;
+  font-family: "Nanum Myeongjo", serif;
 `;
 
 const Profile = styled.img`
@@ -59,7 +56,7 @@ const Navigation = () => {
 
   return (
     <Wrapper>
-      <LogoImage src="http://placehold.it/150x24" />
+      <Logo> 센 / 텐 / 스</Logo>
       <MenuWrapper>
         <Menu onClick={() => history.push("/main")}>홈</Menu>
         <Menu onClick={() => history.push("/mypage")}>내 서재</Menu>
