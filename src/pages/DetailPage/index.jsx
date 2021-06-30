@@ -170,6 +170,17 @@ const FundingPercentage = styled.div`
   margin-bottom: 20px;
 `;
 
+const CommentFormWrapper = styled.div`
+  display: flex;
+`;
+
+const CommentButton = styled(Button)`
+  margin-left: 10px;
+  padding: 0px;
+  height: 43px;
+  flex-basis: 100px;
+`;
+
 const Funding = () => {
   return (
     <FundingWrapper>
@@ -189,6 +200,12 @@ const Funding = () => {
 const DetailPage = ({ isFunding }) => {
   const history = useHistory();
   const [opacity, setOpacity] = useState(0);
+  const [commentInput, setCommentInput] = useState("");
+  const [comments, setComments] = useState([]);
+
+  const addComment = (comment) => {
+    setComments([...comments, comment]);
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
@@ -237,12 +254,27 @@ const DetailPage = ({ isFunding }) => {
           </BookDescription>
 
           <CommentWidth>
-            <TextField placeholder="댓글을 입력하세요" />
+            <CommentFormWrapper>
+              <TextField
+                placeholder="댓글을 입력하세요"
+                onChange={(e) => setCommentInput(e.target.value)}
+              />
+              <CommentButton
+                onClick={() => {
+                  addComment(commentInput);
+                }}
+              >
+                댓글작성
+              </CommentButton>
+            </CommentFormWrapper>
             <Space size={20} />
             <Comment> 책 정말 추천드립니다. </Comment>
             <Comment> 심금을 울리는 책 입니다. </Comment>
             <Comment> 울었다. </Comment>
             <Comment> 이성인 작가, 그는 신인가? </Comment>
+            {comments.map((comment) => {
+              return <Comment>{comment}</Comment>;
+            })}
           </CommentWidth>
         </DetailSection>
       </div>
