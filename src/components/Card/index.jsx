@@ -137,10 +137,10 @@ const Card = ({ funding, onClick }) => {
         {!funding && (
           <LabelWrapper>
             <Label>
-              <AiFillHeart /> 30
+              <AiFillHeart /> {Math.floor(Math.random() * 100)}
             </Label>
             <Label>
-              <FaComment /> 40
+              <FaComment /> {Math.floor(Math.random() * 100)}
             </Label>
           </LabelWrapper>
         )}
