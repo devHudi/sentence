@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { Navigation, WidthLimiter, Card } from "components";
+import Tagcloud from "./Tagcloud";
 
 const Wrapper = styled.div`
   display: flex;
@@ -38,6 +39,13 @@ const Numbers = styled.div`
   font-weight: lighter;
 `;
 
+const Title = styled.div`
+  margin-bottom: 15px;
+  font-size: 15pt;
+  font-weight: bold;
+  text-align: left;
+`;
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -65,6 +73,10 @@ const MyPage = () => {
       <Navigation />
       <WidthLimiter small>
         <Profile />
+
+        <Tagcloud />
+
+        <Title>✏️ 동현님이 작성하신 문장</Title>
         <Grid>
           <Card onClick={() => history.push("/sentence-detail")} />
           <Card onClick={() => history.push("/sentence-detail")} />

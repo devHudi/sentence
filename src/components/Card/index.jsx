@@ -1,13 +1,16 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AiFillHeart } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
+import images from "assets/data/images.json";
+import sentences from "assets/data/sentences.json";
 
 const Wrapper = styled.div`
   position: relative;
   margin-right: 20px;
   height: 200px;
   border-radius: 10px;
-  background-image: url("https://source.unsplash.com/random");
+  background-image: url(${(props) => props.src});
   background-size: cover;
   background-position: center;
   cursor: pointer;
@@ -100,12 +103,27 @@ const FundingProgressBar = styled.div`
 `;
 
 const Card = ({ funding, onClick }) => {
+  const [bg, setBg] = useState("");
+  const [sentence, setSentence] = useState("");
+
+  useEffect(() => {
+    const img =
+      images[Math.floor(Math.random() * (images.length - 1) + 0)].download_url;
+    setBg(img);
+  }, []);
+
+  useEffect(() => {
+    console.log(sentences);
+    const sentence =
+      sentences[Math.floor(Math.random() * (sentences.length - 1) + 0)];
+
+    setSentence(sentence);
+  }, []);
+
   return (
-    <Wrapper onClick={onClick}>
+    <Wrapper src={bg} onClick={onClick}>
       <Dimmer>
-        <Content>
-          빗물이 모여야 강물이 되지만 눈물이 모였을 때 서글픔은 바다보다 깊었다.
-        </Content>
+        <Content>{sentence}</Content>
         {funding && (
           <FundingWrapper>
             <FundingProgressWrapper>
