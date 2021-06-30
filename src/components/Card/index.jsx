@@ -7,10 +7,14 @@ const Wrapper = styled.div`
   margin-right: 20px;
   height: 200px;
   border-radius: 10px;
-  background-image: url("https://i.pinimg.com/736x/1e/09/22/1e0922a00c2f87c75de1412b4f75f684.jpg");
+  background-image: url("https://source.unsplash.com/random");
   background-size: cover;
   background-position: center;
   cursor: pointer;
+
+  &:last-child {
+    margin: 0;
+  }
 `;
 
 const Dimmer = styled.div`

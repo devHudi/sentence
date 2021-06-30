@@ -1,5 +1,12 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import { SignPage, EmotionPage, MainPage, DetailPage, MyPage } from "pages";
+import {
+  SignPage,
+  EmotionPage,
+  MainPage,
+  DetailPage,
+  MyPage,
+  EditorPage,
+} from "pages";
 
 const RootRouter = () => {
   return (
@@ -24,6 +31,9 @@ const RootRouter = () => {
       </Route>
       <Route exact path="/mypage">
         <MyPage />
+      </Route>
+      <Route exact path="/editor">
+        <EditorPage />
       </Route>
     </BrowserRouter>
   );

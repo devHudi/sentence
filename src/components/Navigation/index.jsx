@@ -30,6 +30,10 @@ const Menu = styled.div`
   &:last-child {
     margin: 0;
   }
+
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+  }
 `;
 
 const Logo = styled.div`
@@ -60,6 +64,7 @@ const Navigation = () => {
       <MenuWrapper>
         <Menu onClick={() => history.push("/main")}>홈</Menu>
         <Menu onClick={() => history.push("/mypage")}>내 서재</Menu>
+        <Menu onClick={() => history.push("/editor")}>글귀 작성</Menu>
         <Menu>
           <HiSearch />
           검색
