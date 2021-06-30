@@ -5,6 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FiArrowLeft } from "react-icons/fi";
 import { AiFillHome } from "react-icons/ai";
 import { TextField, Comment, Space, Button } from "components";
+import Like from "./Like";
 import sentences from "assets/data/sentences.json";
 
 const Fullpage = styled.div`
@@ -192,6 +193,12 @@ const CommentButton = styled(Button)`
   flex-basis: 100px;
 `;
 
+const LikeWrapper = styled.div`
+  margin: 20px auto;
+  max-width: 500px;
+  text-align: right;
+`;
+
 const Funding = () => {
   return (
     <FundingWrapper>
@@ -279,6 +286,10 @@ const DetailPage = ({ isFunding, fromEmotion }) => {
             길지 구하지 트고, 있는 끓는 아름다우냐? 것은 있음으로써 할지라도
             교향악이다. 위하여, 쓸쓸한 트고, 칼이다.
           </BookDescription>
+
+          <LikeWrapper>
+            <Like />
+          </LikeWrapper>
 
           <CommentWidth>
             <CommentFormWrapper>
