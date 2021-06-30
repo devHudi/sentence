@@ -7,6 +7,11 @@ const Wrapper = styled.div`
   background: linear-gradient(to top, #edb17a, #827993);
 `;
 
+const VerticalLine = styled.div`
+  height: 60%;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+`;
+
 const Divider = styled.div`
   height: 100%;
   display: flex;
@@ -79,6 +84,9 @@ const SignPage = () => {
           <Title>
             <VerticalText>센/텐/스</VerticalText>
           </Title>
+        </div>
+        <div>
+          <VerticalLine />
         </div>
         <div>
           <div>
