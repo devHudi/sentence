@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiArrowLeft } from "react-icons/fi";
-import { AiOutlineShareAlt } from "react-icons/ai";
 import { TextField, Comment, Space, Button } from "components";
 
 const Fullpage = styled.div`

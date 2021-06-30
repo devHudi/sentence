@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import profileImage from "assets/images/profile.png";
 
 const Wrapper = styled.div`
   margin-bottom: 15px;
@@ -18,7 +19,7 @@ const Content = styled.div``;
 const Comment = ({ children }) => {
   return (
     <Wrapper>
-      <Profile src="http://placehold.it/300x300" />
+      <Profile src={profileImage} />
       <Content>{children}</Content>
     </Wrapper>
   );

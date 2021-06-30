@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 import { Navigation, WidthLimiter, Card } from "components";
 
 const Wrapper = styled.div`
@@ -57,19 +58,22 @@ const Profile = () => {
 };
 
 const MyPage = () => {
+  const history = useHistory();
+
   return (
     <Wrapper>
       <Navigation />
       <WidthLimiter small>
         <Profile />
         <Grid>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card onClick={() => history.push("/sentence-detail")} />
+          <Card onClick={() => history.push("/sentence-detail")} />
+          <Card onClick={() => history.push("/sentence-detail")} />
+          <Card onClick={() => history.push("/sentence-detail")} />
+          <Card onClick={() => history.push("/sentence-detail")} />
+          <Card onClick={() => history.push("/sentence-detail")} />
+          <Card onClick={() => history.push("/sentence-detail")} />
+          <Card onClick={() => history.push("/sentence-detail")} />
         </Grid>
       </WidthLimiter>
     </Wrapper>
