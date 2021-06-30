@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiArrowLeft } from "react-icons/fi";
+import { AiFillHome } from "react-icons/ai";
 import { TextField, Comment, Space, Button } from "components";
 
 const Fullpage = styled.div`
@@ -18,6 +19,15 @@ const BackArrowWrapper = styled.div`
   position: fixed;
   top: 15px;
   left: 15px;
+  font-size: 15pt;
+  cursor: pointer;
+  z-index: 999;
+`;
+
+const HomeWrapper = styled.div`
+  position: fixed;
+  top: 15px;
+  right: 15px;
   font-size: 15pt;
   cursor: pointer;
   z-index: 999;
@@ -197,7 +207,7 @@ const Funding = () => {
   );
 };
 
-const DetailPage = ({ isFunding }) => {
+const DetailPage = ({ isFunding, fromEmotion }) => {
   const history = useHistory();
   const [opacity, setOpacity] = useState(0);
   const [commentInput, setCommentInput] = useState("");
@@ -229,9 +239,26 @@ const DetailPage = ({ isFunding }) => {
         <ArrowWrapper>
           <IoIosArrowDown />
         </ArrowWrapper>
-        <BackArrowWrapper onClick={() => history.push("/main")}>
+        <BackArrowWrapper
+          onClick={() => {
+            if (fromEmotion) {
+              history.push("/emotion");
+            } else {
+              history.push("/main");
+            }
+          }}
+        >
           <FiArrowLeft />
         </BackArrowWrapper>
+        {fromEmotion && (
+          <HomeWrapper
+            onClick={() => {
+              history.push("/main");
+            }}
+          >
+            <AiFillHome />
+          </HomeWrapper>
+        )}
         <ScrollDimmer opacity={opacity}></ScrollDimmer>
       </Fullpage>
       <div>

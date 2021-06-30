@@ -16,6 +16,9 @@ const RootRouter = () => {
       <Route exact path="/sentence-detail">
         <DetailPage />
       </Route>
+      <Route exact path="/sentence-detail/from-emotion">
+        <DetailPage fromEmotion />
+      </Route>
       <Route exact path="/sentence-detail/funding">
         <DetailPage isFunding />
       </Route>

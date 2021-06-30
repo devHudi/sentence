@@ -56,7 +56,7 @@ const Navigation = () => {
 
   return (
     <Wrapper>
-      <Logo> 센 / 텐 / 스</Logo>
+      <Logo> 센 / 텐 / 스 </Logo>
       <MenuWrapper>
         <Menu onClick={() => history.push("/main")}>홈</Menu>
         <Menu onClick={() => history.push("/mypage")}>내 서재</Menu>

@@ -112,22 +112,22 @@ const EmotionPage = () => {
             <Emotion
               emoji="😊"
               caption="행복해요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="😥"
               caption="슬퍼요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="😡"
               caption="화가나요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="😔"
               caption="피곤해요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="🥰"
@@ -137,42 +137,42 @@ const EmotionPage = () => {
                   <br /> 빠졌어요
                 </>
               }
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="🤔"
               caption="고민이 많아요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="😐"
               caption="그냥 그래요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="😴"
               caption="졸려요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="😵"
               caption="아파요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="😳"
               caption="창피해요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="🥺"
               caption="간절해요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
             <Emotion
               emoji="😱"
               caption="좌절했어요"
-              onClick={() => history.push("/sentence-detail")}
+              onClick={() => history.push("/sentence-detail/from-emotion")}
             />
           </EmotionGrid>
           <Skip>
