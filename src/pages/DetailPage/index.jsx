@@ -5,6 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FiArrowLeft } from "react-icons/fi";
 import { AiFillHome } from "react-icons/ai";
 import { TextField, Comment, Space, Button } from "components";
+import sentences from "assets/data/sentences.json";
 
 const Fullpage = styled.div`
   position: relative;
@@ -232,8 +233,7 @@ const DetailPage = ({ isFunding, fromEmotion }) => {
       <Fullpage>
         <Dimmer>
           <FullpageText>
-            빗물이 모여야 강물이 되지만 눈물이 모였을 때 서글픔은 바다보다
-            깊었다.
+            {sentences[Math.floor(Math.random() * (sentences.length - 1) + 0)]}
           </FullpageText>
         </Dimmer>
         <ArrowWrapper>

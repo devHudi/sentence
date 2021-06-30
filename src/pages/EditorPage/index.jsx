@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useHistory } from "react-router";
 import { Navigation, Space, TextField, Button } from "components";
 import Preview from "./Preview";
 
@@ -24,6 +25,8 @@ const FormWrapper = styled.div`
 `;
 
 const EditorPage = () => {
+  const history = useHistory();
+
   return (
     <>
       <Navigation />
@@ -35,7 +38,14 @@ const EditorPage = () => {
             <TextField placeholder="출판사" />
             <TextField placeholder="선정 이유" />
             <Space size={20} />
-            <Button>게시하기</Button>
+            <Button
+              onClick={() => {
+                alert("게시되었습니다.");
+                history.push("/main");
+              }}
+            >
+              게시하기
+            </Button>
           </FormWrapper>
         </FlexWrapper>
       </PageWrapper>

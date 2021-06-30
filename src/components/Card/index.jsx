@@ -113,7 +113,6 @@ const Card = ({ funding, onClick }) => {
   }, []);
 
   useEffect(() => {
-    console.log(sentences);
     const sentence =
       sentences[Math.floor(Math.random() * (sentences.length - 1) + 0)];
 
