@@ -221,6 +221,9 @@ const DetailPage = ({ isFunding, fromEmotion }) => {
   const [commentInput, setCommentInput] = useState("");
   const [comments, setComments] = useState([]);
 
+  const [bg, setBg] = useState("");
+  const [sentence, setSentence] = useState("");
+
   const addComment = (comment) => {
     setComments([...comments, comment]);
   };
@@ -235,13 +238,17 @@ const DetailPage = ({ isFunding, fromEmotion }) => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    setSentence(
+      sentences[Math.floor(Math.random() * (sentences.length - 1) + 0)]
+    );
+  }, []);
+
   return (
     <>
       <Fullpage>
         <Dimmer>
-          <FullpageText>
-            {sentences[Math.floor(Math.random() * (sentences.length - 1) + 0)]}
-          </FullpageText>
+          <FullpageText>{sentence}</FullpageText>
         </Dimmer>
         <ArrowWrapper>
           <IoIosArrowDown />
