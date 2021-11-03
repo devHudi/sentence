@@ -221,7 +221,6 @@ const DetailPage = ({ isFunding, fromEmotion }) => {
   const [commentInput, setCommentInput] = useState("");
   const [comments, setComments] = useState([]);
 
-  const [bg, setBg] = useState("");
   const [sentence, setSentence] = useState("");
 
   const addComment = (comment) => {
