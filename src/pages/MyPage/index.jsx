@@ -55,7 +55,7 @@ const Grid = styled.div`
 const Profile = () => {
   return (
     <ProfileWrapper>
-      <ProfileImage src="https://hudi.blog/static/profile-49f9435bde9ff6068fc6a872d6412538.png" />
+      <ProfileImage src="https://hudi.blog/static/profile-00094cdd94690e21e1f412dbfd4d6656.png" />
       <div>
         <Name>조동현</Name>
         <Description> 책을 좋아하는 서비스 개발자입니다. </Description>
